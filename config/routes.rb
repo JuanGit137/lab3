@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   # Rutas estáticas corregidas
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
+  post "/contact", to: 'static_pages#contact'
 
   # Define la ruta raíz de la aplicación
   root "static_pages#home"
 end
+
+
+

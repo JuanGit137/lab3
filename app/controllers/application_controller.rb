@@ -1,4 +1,12 @@
 class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
+end
+
+class StaticPagesController < ApplicationController
+  def contact
+    if request.post?
+      flash[:notice] = "Thank you for your message, we will contact you soon."
+      redirect_to contact_path
+    end
+  end
 end
